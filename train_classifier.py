@@ -30,7 +30,7 @@ ap.add_argument("-d", "--dataset", default='data/train_faces',
 	help="path to input dataset")
 args = vars(ap.parse_args())
 
-modelPath = 'model/mobilenet_classifier_1.model'
+modelPath = 'model/mobilenet_classifier_2.model'
 
 # initialize the initial learning rate, number of epochs to train for,
 # and batch size
