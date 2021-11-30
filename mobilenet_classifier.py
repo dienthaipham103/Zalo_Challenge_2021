@@ -7,7 +7,7 @@ import cv2
 # load the face mask detector model from disk
 print("[INFO] loading face mask detector model...")
 # model = load_model("classification.model")
-pretrained_model = load_model("model/mobilenet_classifier.model")
+pretrained_model = load_model("model/mobilenet_classifier_2.model")
 
 '''
 Img input (rgb)

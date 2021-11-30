@@ -37,7 +37,12 @@ def draw(img_path, bboxs, img=None, thresh=0.5, max_size=0):
     cnt_nomask = 0
 
     for bbox in bboxs:
-        img_bbox = img[bbox[1]:bbox[3], bbox[0]:bbox[2], [2, 1, 0]]
+        # expand the box to classify more accurately
+        xmin = max(0, bbox[0] - 4)
+        xmax = min(img.shape[1], bbox[2] + 4)
+        ymin = max(0, bbox[1] - 2)
+        ymax = min(img.shape[0], bbox[3] + 2)
+        img_bbox = img[ymin:ymax, xmin:xmax, [2, 1, 0]]
 
         if img_bbox.shape[0] * img_bbox.shape[1] < max_size:
             continue
@@ -179,4 +184,4 @@ if __name__ == "__main__":
     # predict_image(path, saved_path)
     # predict_folder(output_f='data/ssd_mobilenet_result')
     # predict_folder(output_f='data/ehdetect_mobilenet_result')
-    predict_folder(output_f='data/check')
+    predict_folder(output_f='data/result_2')
