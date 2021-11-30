@@ -1,0 +1,12 @@
+1. Preprocessing data
+- Remove small faces (< 32x32)
+---> Run data_preprocess.py
+2. Add more no_mask faces
+- Predict the unlabeled folder by a pretrained models, add faces with no_mask label predicted into our dataset
+---> Run add_label.py
+3. Re-train the classifier
+---> Run train_classifier.py
+4. Remove wrong label
+---> Run remove_label.py
+5. Re-train the classifier
+---> Run train_classifier.py
